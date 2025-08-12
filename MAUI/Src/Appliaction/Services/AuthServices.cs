@@ -22,9 +22,7 @@ public class AuthServices : IAuthServices
     {
         try
         {
-            var parameters = new GenericParameters { Services = "Logon" };
-
-            var userResponse = await _apiService.PostAsync<AuthLoginRequest, UserModel>("index", request, parameters);
+            var userResponse = await _apiService.PostAsync<AuthLoginRequest, UserModel>("Auth/login", request);
 
             if (userResponse is null || userResponse.Type is null)
                 return ServiceResult<UserModel>.Fail("Usuario no encontrado");
