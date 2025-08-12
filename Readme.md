@@ -61,8 +61,8 @@ Maui/
 Desde la terminal:
 
 ```bash
-dotnet build .UI
-dotnet run --project .UI
+dotnet build UI
+dotnet run --project UI
 ```
 
 O abre el proyecto `UI` en Visual Studio y ejecuta en un emulador Android o simulador iOS.
