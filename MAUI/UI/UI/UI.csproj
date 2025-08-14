@@ -48,7 +48,6 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Src\Appliaction\Appliaction.csproj" />
-	  <ProjectReference Include="..\..\Src\Domain\Domain.csproj" />
 	  <ProjectReference Include="..\..\Src\Infrastructure\Infrastructure.csproj" />
 	  <ProjectReference Include="..\..\Src\Shared\Shared.csproj" />
 	  <ProjectReference Include="..\Components\Components.csproj" />

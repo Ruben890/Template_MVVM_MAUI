@@ -20,26 +20,28 @@
 
 	<ItemGroup>
 	  <AndroidResource Remove="Components\**" />
+	  <AndroidResource Remove="Resources\Styles\**" />
 	  <AndroidResource Remove="Templates\**" />
 	  <Compile Remove="Components\**" />
+	  <Compile Remove="Resources\Styles\**" />
 	  <Compile Remove="Templates\**" />
 	  <EmbeddedResource Remove="Components\**" />
+	  <EmbeddedResource Remove="Resources\Styles\**" />
 	  <EmbeddedResource Remove="Templates\**" />
 	  <MauiCss Remove="Components\**" />
+	  <MauiCss Remove="Resources\Styles\**" />
 	  <MauiCss Remove="Templates\**" />
 	  <MauiXaml Remove="Components\**" />
+	  <MauiXaml Remove="Resources\Styles\**" />
 	  <MauiXaml Remove="Templates\**" />
 	  <None Remove="Components\**" />
+	  <None Remove="Resources\Styles\**" />
 	  <None Remove="Templates\**" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Resources\Styles\" />
 	</ItemGroup>
 
 	<ItemGroup>
