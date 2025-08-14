@@ -1,4 +1,5 @@
-﻿using UI.Views.Auth;
+﻿using UI.ViewModels.Auth;
+using UI.Views.Auth;
 
 namespace UI.Config
 {
@@ -10,9 +11,8 @@ namespace UI.Config
         /// </summary>
         public static void AddViewsAndViewModels(this IServiceCollection services)
         {
-            // Registro de páginas (views)
+            services.AddTransient<LoginViewModel>();
             services.AddTransient<LoginPage>();
-            services.AddTransient<MainPage>();
         }
     }
 }
