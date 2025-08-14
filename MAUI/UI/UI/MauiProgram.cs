@@ -1,10 +1,11 @@
 ﻿using Appliaction.Config;
+using CommunityToolkit.Maui;
 using Infrastructure.Config;
-using UI.Config;
 using Microsoft.Extensions.Logging;
-using Shared.Enums;
-using Shared.Config;
 using RestSharp;
+using Shared.Config;
+using Shared.Enums;
+using UI.Config;
 
 namespace UI
 {
@@ -47,7 +48,8 @@ namespace UI
             });
 
             // Usar la clase App, inyectando el entorno y configuración
-            builder.UseMauiApp<App>();
+            builder.UseMauiApp<App>()
+                .UseMauiCommunityToolkit();
 
             // Configurar logging solo en Development
             if (currentEnv == EnvironmentType.Development)
