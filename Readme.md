@@ -21,7 +21,6 @@ Maui/
 │   ├── Components/         # Controles personalizados (botones, tarjetas, inputs)
 │   ├── Themes/             # Temas globales (colores, estilos, modo oscuro/claro)
 │   ├── Behaviors/          # Validaciones, efectos e interacciones personalizadas
-│   └── Resources/          # Imágenes, iconos y otros recursos compartidos
 │
 ├── Application/       # Capa de aplicación (servicios,  base)
 │   ├── Config/             # Configuraciones específicas de la aplicación
