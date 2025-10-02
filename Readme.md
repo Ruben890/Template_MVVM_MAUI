@@ -15,11 +15,13 @@ Maui/
 │   ├── Views/              # Páginas específicas (Home, Auth, etc.)
 │   ├── ViewModels/         # ViewModels por módulo
 │   ├── Resources/          # Fuentes, estilos y recursos locales
+    ├── Shared/             # Recursos compartidos entre vistas o ViewModels (componentes específicos de páginas o ViewModels)
 │   └── App.xaml            # Punto de entrada y configuración principal
 │
-├── Components/        # Biblioteca MAUI para componentes UI reutilizables
+├── Components/        # Biblioteca MAUI para componentes UI reutilizables y Genericos
 │   ├── Components/         # Controles personalizados (botones, tarjetas, inputs)
 │   ├── Themes/             # Temas globales (colores, estilos, modo oscuro/claro)
+│   ├── Libs/               # Librerias o internal o externas como (Font Awesome)
 │   ├── Behaviors/          # Validaciones, efectos e interacciones personalizadas
 │
 ├── Application/       # Capa de aplicación (servicios,  base)
