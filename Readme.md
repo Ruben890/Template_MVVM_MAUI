@@ -21,7 +21,7 @@ Maui/
 ├── Components/        # Biblioteca MAUI para componentes UI reutilizables y Genericos
 │   ├── Components/         # Controles personalizados (botones, tarjetas, inputs)
 │   ├── Themes/             # Temas globales (colores, estilos, modo oscuro/claro)
-│   ├── Libs/               # Librerias o internal o externas como (Font Awesome)
+│   ├── Libs/               # Librerias internal o externas como (Font Awesome)
 │   ├── Behaviors/          # Validaciones, efectos e interacciones personalizadas
 │
 ├── Application/       # Capa de aplicación (servicios,  base)
