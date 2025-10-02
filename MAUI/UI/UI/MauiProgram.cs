@@ -1,11 +1,13 @@
 ﻿using Appliaction.Config;
+using Appliaction.Mappers;
 using CommunityToolkit.Maui;
 using Infrastructure.Config;
 using Microsoft.Extensions.Logging;
 using RestSharp;
 using Shared.Config;
 using Shared.Enums;
-using UI.Config;
+using UI.Services;
+using UI.Shared.Utils;
 
 namespace UI
 {
@@ -14,6 +16,7 @@ namespace UI
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+
 
             // Define el entorno actual (Development, Production, etc)
             EnvironmentType currentEnv = EnvironmentType.Development;
@@ -35,10 +38,27 @@ namespace UI
                 return client;
             });
 
-            // Registrar servicios de infraestructura y aplicación (extensiones)
-            builder.Services.AddInfrastructureServices();
+
+            // Inyectar PathHelper como singleton
+            builder.Services.AddSingleton<PathHelper>(sp =>
+            {
+                var deviceInfo = DeviceInfo.Current;           // IDeviceInfo actual
+                return new PathHelper(deviceInfo);             // crea instancia
+            });
+
+            // Registrar la carpeta de la base de datos como singleton
+            builder.Services.AddSingleton(sp =>
+            {
+                var pathHelper = sp.GetRequiredService<PathHelper>();
+                return pathHelper.GetLynxFolder();            // retorna la ruta
+            });
+
+            // Ahora la carpeta de la DB se puede inyectar en AddInfrastructureServices
+            var tempProvider = builder.Services.BuildServiceProvider();
+            var databaseFolder = tempProvider.GetRequiredService<string>();
+            builder.Services.AddInfrastructureServices(databaseFolder);
             builder.Services.AddApplicationServices();
-            builder.Services.AddViewsAndViewModels();
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
 
             // Configurar fuentes personalizadas
             builder.ConfigureFonts(fonts =>
@@ -55,10 +75,10 @@ namespace UI
                 fonts.AddFont("fontrwesome5prosolid900.otf", "FAS");       // Solid        
             });
 
-
             // Usar la clase App, inyectando el entorno y configuración
             builder.UseMauiApp<App>()
-                .UseMauiCommunityToolkit();
+                   .UseMauiCommunityToolkit();
+
 
             // Configurar logging solo en Development
             if (currentEnv == EnvironmentType.Development)
@@ -66,7 +86,14 @@ namespace UI
                 builder.Logging.AddDebug();
             }
 
-            return builder.Build();
+            var app = builder.Build();
+
+            ServiceLocator.SetLocator(app.Services);
+
+            // Aplicar migraciones automáticamente al iniciar la app
+            app.Services.ApplyMigrations();
+
+            return app;
         }
     }
 }

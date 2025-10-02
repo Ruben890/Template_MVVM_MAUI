@@ -6,10 +6,10 @@ namespace Infrastructure.Config
 {
     public static class Configuration
     {
-        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, string databaseFolder)
         {
             services.AddRepositoryServices();
-            services.AddSqliteContext();
+            services.AddLynxSqliteContext(databaseFolder);
             services.AddTransient<IApiService, ApiService>();
 
             return services;
