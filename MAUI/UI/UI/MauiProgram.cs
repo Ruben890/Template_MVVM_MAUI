@@ -43,9 +43,18 @@ namespace UI
             // Configurar fuentes personalizadas
             builder.ConfigureFonts(fonts =>
             {
+                // Open Sans (default app font)
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+
+                // Font Awesome 5
+                fonts.AddFont("fontrwesome5brandsregular400.otf", "FAB");  // Brands
+                fonts.AddFont("fontrwesome5duotonesolid900.otf", "FAD");   // Duotone
+                fonts.AddFont("fontrwesome5prolight300.otf", "FAL");       // Light
+                fonts.AddFont("fontrwesome5proregular400.otf", "FAR");     // Regular
+                fonts.AddFont("fontrwesome5prosolid900.otf", "FAS");       // Solid        
             });
+
 
             // Usar la clase App, inyectando el entorno y configuración
             builder.UseMauiApp<App>()

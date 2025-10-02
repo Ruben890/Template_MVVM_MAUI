@@ -1,70 +1,88 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
+    x:Class="UI.Views.Auth.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fa="clr-namespace:Components.Libs;assembly=Components"
     xmlns:vm="clr-namespace:UI.ViewModels.Auth"
-    x:Class="UI.Views.Auth.LoginPage"
-    Shell.NavBarIsVisible="False"
-    BackgroundColor="White">
+    BackgroundColor="White"
+    Shell.NavBarIsVisible="False">
 
 
 
     <Grid RowDefinitions="*,Auto">
 
         <ScrollView Grid.Row="0">
-            <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
-
-                
-
-                <!-- Título -->
-                <Label Text="Bienvenido/a"
-                       FontSize="28"
-                       FontAttributes="Bold"
-                       HorizontalOptions="Center" />
-
-                <Label Text="Inicia sesión para continuar"
-                       FontSize="14"
-                       HorizontalOptions="Center"
-                       TextColor="Gray" />
-
-                <!-- Usuario -->
-                <Frame CornerRadius="8" Padding="12,0" HasShadow="False" BorderColor="Gray">
-                    <Entry Placeholder="Usuario"
-                           Text="{Binding Username}"
-                           BackgroundColor="Transparent"
-                           HeightRequest="48" />
-                </Frame>
-
-                <!-- Contraseña -->
-                <Frame CornerRadius="8" Padding="12,0" HasShadow="False" BorderColor="Gray">
-                    <Entry Placeholder="Contraseña"
-                           IsPassword="True"
-                           Text="{Binding Password}"
-                           BackgroundColor="Transparent"
-                           HeightRequest="48" />
-                </Frame>
+            <VerticalStackLayout
+                Padding="30"
+                Spacing="20"
+                VerticalOptions="Center">
 
 
 
-                <!-- Botón login -->
-                <Button Text="Iniciar sesión"
-                        Command="{Binding LoginCommand}"
+                <!--  Título  -->
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="28"
+                    HorizontalOptions="Center"
+                    Text="Bienvenido/a" />
+
+                <Label
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Text="Inicia sesión para continuar"
+                    TextColor="Gray" />
+
+                <!--  Usuario  -->
+                <Frame
+                    Padding="12,0"
+                    BorderColor="Gray"
+                    CornerRadius="8"
+                    HasShadow="False">
+                    <Entry
+                        BackgroundColor="Transparent"
                         HeightRequest="48"
-                        BackgroundColor="#1447E6"
-                        TextColor="White"
-                        CornerRadius="10" />
+                        Placeholder="Usuario"
+                        Text="{Binding Username}" />
+                </Frame>
+
+                <!--  Contraseña  -->
+                <Frame
+                    Padding="12,0"
+                    BorderColor="Gray"
+                    CornerRadius="8"
+                    HasShadow="False">
+                    <Entry
+                        BackgroundColor="Transparent"
+                        HeightRequest="48"
+                        IsPassword="True"
+                        Placeholder="Contraseña"
+                        Text="{Binding Password}" />
+                </Frame>
+
+
+
+                <!--  Botón login  -->
+                <Button
+                    BackgroundColor="#1447E6"
+                    Command="{Binding LoginCommand}"
+                    CornerRadius="10"
+                    HeightRequest="48"
+                    Text="Iniciar sesión"
+                    TextColor="White" />
 
             </VerticalStackLayout>
         </ScrollView>
 
-        <!-- Versión de la app -->
-        <Label Grid.Row="1"
-               Text="{Binding AppVersion}"
-               FontSize="10"
-               TextColor="Gray"
-               HorizontalOptions="Center"
-               VerticalOptions="End"
-               Margin="0,0,0,10" />
+        <!--  Versión de la app  -->
+        <Label
+            Grid.Row="1"
+            Margin="0,0,0,10"
+            FontSize="10"
+            HorizontalOptions="Center"
+            Text="{Binding AppVersion}"
+            TextColor="Gray"
+            VerticalOptions="End" />
 
 
 
