@@ -14,9 +14,6 @@ namespace UI.ViewModels.Auth
 
         private string _email = string.Empty;
         private string _password = string.Empty;
-        private bool _isSyncing = false;
-        private string _syncStatus = string.Empty;
-        private string _syncName = string.Empty;
 
         public string Email
         {

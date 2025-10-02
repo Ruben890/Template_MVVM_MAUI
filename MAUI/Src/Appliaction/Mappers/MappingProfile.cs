@@ -1,6 +1,12 @@
-﻿namespace Appliaction.Mappers
+﻿using AutoMapper;
+
+namespace Appliaction.Mappers
 {
-    public class MappingProfile
+    public class MappingProfile : Profile
     {
+        public MappingProfile()
+        {
+
+        }
     }
 }

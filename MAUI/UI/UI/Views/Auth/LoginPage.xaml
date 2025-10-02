@@ -13,6 +13,7 @@
     <Grid RowDefinitions="*,Auto">
 
         <Label
+            Padding="10"
             FontFamily="FAS"
             FontSize="20"
             Text="{x:Static fa:FontAwesomeIcons.Bars}"

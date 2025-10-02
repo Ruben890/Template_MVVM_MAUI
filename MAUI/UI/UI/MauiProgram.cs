@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using RestSharp;
 using Shared.Config;
 using Shared.Enums;
+using UI.Config;
 using UI.Services;
 using UI.Shared.Utils;
 
@@ -58,6 +59,7 @@ namespace UI
             var databaseFolder = tempProvider.GetRequiredService<string>();
             builder.Services.AddInfrastructureServices(databaseFolder);
             builder.Services.AddApplicationServices();
+            builder.Services.AddPagesAndViewModels();
             builder.Services.AddAutoMapper(typeof(MappingProfile));
 
             // Configurar fuentes personalizadas
