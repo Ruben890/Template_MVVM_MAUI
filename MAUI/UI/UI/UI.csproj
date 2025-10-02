@@ -63,6 +63,14 @@
 		<MauiImage Include="Resources\Images\*" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\fontrwesome5brandsregular400.otf" />
+	  <None Remove="Resources\Fonts\fontrwesome5duotonesolid900.otf" />
+	  <None Remove="Resources\Fonts\fontrwesome5prolight300.otf" />
+	  <None Remove="Resources\Fonts\fontrwesome5proregular400.otf" />
+	  <None Remove="Resources\Fonts\fontrwesome5prosolid900.otf" />
+	</ItemGroup>
+
 	<!--Configuracion de icono de la app-->
 	<ItemGroup>
 		<MauiIcon Include="Resources/AppIcon/appicon.svg" BaseSize="512,512" />
@@ -74,6 +82,14 @@
 
 	<ItemGroup>
 	  <Folder Include="Shared\Utils\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiFont Include="Resources\Fonts\fontrwesome5brandsregular400.otf" />
+	  <MauiFont Include="Resources\Fonts\fontrwesome5duotonesolid900.otf" />
+	  <MauiFont Include="Resources\Fonts\fontrwesome5prolight300.otf" />
+	  <MauiFont Include="Resources\Fonts\fontrwesome5proregular400.otf" />
+	  <MauiFont Include="Resources\Fonts\fontrwesome5prosolid900.otf" />
 	</ItemGroup>
 
 
